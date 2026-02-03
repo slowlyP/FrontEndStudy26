@@ -1,0 +1,110 @@
+<!-- HTML5 문서임을 브라우저에 알려주는 선언 -->
+<!DOCTYPE html>
+
+<!-- 문서의 시작, lang="ko"는 문서 기본 언어가 한국어임을 의미 -->
+<html lang="ko">
+
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 (한글 깨짐 방지) -->
+    <meta charset="UTF-8">
+
+    <!--
+        viewport 설정
+        - 모바일 / 태블릿 / 데스크톱 등 화면 크기에 맞게 자동 조정
+        - 반응형 웹에서 반드시 필요한 설정
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--            viewport : 반응형 웹용 필수 코드-->
+
+    <!-- 브라우저 탭에 표시되는 페이지 제목 -->
+    <title>개발자 도구 실습</title>
+
+    <!--
+        style 태그
+        - HTML 문서 안에서 CSS를 직접 작성
+        - 작은 실습이나 테스트에 적합
+    -->
+    <style>
+
+        /*
+            body 전체에 적용되는 스타일
+            - font-family : 글꼴 지정
+            - margin : 화면 가장자리 여백
+        */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /*
+            class="highlight"가 붙은 요소에 적용되는 스타일
+            - background-color : 배경색
+            - padding : 안쪽 여백
+            - border-radius : 모서리를 둥글게
+        */
+        .highlight {
+            background-color: yellow;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /*
+            모든 button 태그에 적용되는 기본 스타일
+        */
+        button {
+            background-color: #007bff; /* 버튼 배경색 */
+            color: white;              /* 글자색 */
+            padding: 10px 20px;        /* 위아래 / 좌우 여백 */
+            border: none;              /* 기본 테두리 제거 */
+            border-radius: 5px;        /* 둥근 버튼 */
+            cursor: pointer;           /* 마우스 올리면 손모양 */
+        }
+
+        /*
+            button:hover
+            - 마우스를 버튼 위에 올렸을 때 적용되는 스타일
+            - hover는 "마우스 오버 상태"
+        */
+        button:hover {
+            background-color: #0056b3; /* 더 진한 파란색 */
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 페이지의 가장 큰 제목 -->
+    <h1>개발자 도구 실습 페이지</h1>
+
+    <!--
+        p 태그 : 문단
+        class="highlight"를 사용해서 CSS 스타일 적용
+    -->
+    <p class="highlight">
+        이 텍스트는 노란색 배경을 가지고 있습니다.
+    </p>
+
+    <!--
+        버튼 태그
+        onclick : 클릭했을 때 실행되는 자바스크립트 코드
+        alert() : 브라우저 팝업창을 띄우는 함수
+    -->
+    <button onclick="alert('버튼이 클릭되었습니다!')">
+        클릭해보세요
+    </button>
+
+    <!--
+        순서 없는 목록 (unordered list)
+        ul : 리스트 전체
+        li : 각 항목
+    -->
+    <ul>
+        <li>첫 번째 항목</li>
+        <li>두 번째 항목</li>
+        <li>세 번째 항목</li>
+    </ul>
+
+</body>
+
+<!-- HTML 문서 끝 -->
+</html>
