@@ -1,0 +1,73 @@
+/* ===============================
+   Font 등록
+   → 로그인 페이지에서도 폰트 사용 가능
+=============================== */
+@font-face{
+    font-family:'GreatVibes';
+    src:url('../fonts/GreatVibes-Regular.ttf')
+        format('truetype');
+  }
+  
+
+
+/* ===============================
+   body 전체 설정
+   → 화면 중앙 정렬
+=============================== */
+body{
+
+    /* flex = 정렬 쉽게 */
+    display:flex;
+  
+    /* 세로 중앙 */
+    align-items:center;
+  
+    /* 가로 중앙 */
+    justify-content:center;
+  
+    /* 화면 전체 높이 */
+    height:100vh;
+  
+    /* 파스텔 배경 */
+    background:linear-gradient(
+      135deg,
+      #FDE2E4,
+      #E2F0FF
+    );
+  }
+  
+  
+  /* ===============================
+     로그인 카드 박스
+  =============================== */
+  .form-signin{
+  
+    width:100%;
+    max-width:360px;
+  
+    /* 내부 여백 */
+    padding:30px;
+  
+    /* 반투명 배경 */
+    background:rgba(255,255,255,0.6);
+  
+    /* 블러 효과 */
+    backdrop-filter:blur(12px);
+  
+    /* 모서리 둥글게 */
+    border-radius:20px;
+  
+    /* 그림자 */
+    box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  }
+  
+  
+  /* ===============================
+     로그인 제목 폰트
+  =============================== */
+  .form-signin h1{
+  
+    /* 필기체 폰트 적용 */
+    font-family:'GreatVibes', cursive;
+  }
+  
