@@ -1,10 +1,12 @@
 # FrontEndStudy26
-html,css,bootstrap,js 학습용
 
+HTML,CSS,JS,Bootstrap 학습용
 
+---
 
-https://wikidocs.net/book/17968
+- [소설처럼 읽는 웹 개발 1](https://wikidocs.net/book/17968)
+```html``` ```CSS``` ```JS```
+- [소설처럼 읽는 웹 개발 2](https://wikidocs.net/book/17969)
+```Bootstrap```
 
-
-https://wikidocs.net/book/17969
-BootStrap,jQuery 학습용
+---
