@@ -1,0 +1,134 @@
+/* ===== 기본 ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+/* ===== 헤더 ===== */
+header {
+    text-align: center;
+    padding: 25px 0 15px;
+}
+
+header h1 {
+    margin: 0;
+    color: #1e88e5;
+}
+
+/* ===== 메뉴 ===== */
+.menu {
+    margin-top: 10px;
+}
+
+.menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1e88e5;
+    font-weight: bold;
+    position: relative;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #1e88e5;
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ===== 메인 배경 ===== */
+.background {
+    position: relative;
+    min-height: 100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/* ===== 얼음 사진 레이어 (외부 링크) ===== */
+.frost-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background-image: url("https://images.unsplash.com/photo-1608889175113-8ee9e5a3b2a4?auto=format&fit=crop&w=2400&q=85");
+
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+
+/* ===== 유리 박스 ===== */
+.glass {
+    position: relative;
+    z-index: 2;
+
+    padding: 50px 60px;
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(0, 120, 255, 0.35);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5);
+
+    text-align: center;
+}
+
+/* ===== 텍스트 ===== */
+.glass h2 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+.glass p {
+    color: #1e3a5f;
+    margin-bottom: 25px;
+}
+
+/* ===== 버튼 ===== */
+button {
+    background: rgba(30, 136, 229, 0.85);
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(30, 136, 229, 1);
+}
+
+/* ===== 푸터 ===== */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #888;
+}

@@ -1,0 +1,35 @@
+.percent-box {
+ width: 50%; /* 부모의 50% 크기 */
+ height: 150px;
+ background-color: #f3e5f5;
+ border: 2px solid #7b1fa2;
+ margin-bottom: 10px;
+}
+
+.viewport-box {
+ width: 30vw; /* 화면 너비의 30% */
+ height: 20vh; /* 화면 높이의 20% */
+ background-color: #e8f5e8;
+ border: 2px solid #388e3c;
+}
+.card-container {
+ width: 100%;
+ max-width: 400px; /* 최대 너비 제한 */
+ margin: 0 auto; /* 가운데 정렬 */
+}
+
+.card {
+ width: 100%;
+ min-height: 200px; /* 최소 높이 보장 */
+ padding: 20px;
+ background-color: #fff;
+ border: 1px solid #ddd;
+ border-radius: 8px;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+ .content-box {
+ width: 300px;
+ height: 200px;
+ background-color: #e3f2fd;
+ border: 2px solid #1976d2;
+ }

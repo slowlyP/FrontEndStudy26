@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <title>할 일 관리</title>
+ <style>
+ .todo-item {
+ padding: 10px;
+ margin: 5px 0;
+ background-color: #f0f0f0;
+ border-radius: 5px;
+ }
+ .delete-btn {
+ background-color: #ff4444;
+ color: white;
+ border: none;
+ padding: 5px 10px;
+ border-radius: 3px;
+ margin-left: 10px;
+ cursor: pointer;
+ }
+ </style>
+</head>
+<body>
+ <h1>할 일 관리</h1>
+
+ <div>
+ <input type="text" id="todoInput" placeholder="할 일을 입력하세요">
+ <button onclick="addTodo()">추가</button>
+ </div>
+
+ <ul id="todoList"></ul>
+
+ <script>
+ function addTodo() {
+ const input = document.getElementById('todoInput');
+ const todoText = input.value.trim();
+
+ if (todoText === '') {
+ alert('할 일을 입력해주세요!');
+ return;
+ }
+
+ // 새로운 li 요소 생성
+ const newTodo = document.createElement('li');
+ newTodo.className = 'todo-item';
+ newTodo.textContent = todoText;
+
+ // 목록에 추가
+ const todoList = document.getElementById('todoList');
+ todoList.appendChild(newTodo);
+
+ // 입력창 비우기
+ input.value = '';
+ }
+  function addTodo() {
+ const input = document.getElementById('todoInput');
+ const todoText = input.value.trim();
+
+ if (todoText === '') {
+ alert('할 일을 입력해주세요!');
+ return;
+ }
+
+ // 새로운 li 요소 생성
+ const newTodo = document.createElement('li');
+ newTodo.className = 'todo-item';
+
+ // 할 일 텍스트를 담을 span 생성
+ const textSpan = document.createElement('span');
+ textSpan.textContent = todoText;
+
+ // 삭제 버튼 생성
+ const deleteBtn = document.createElement('button');
+ deleteBtn.textContent = '삭제';
+ deleteBtn.className = 'delete-btn';
+ deleteBtn.onclick = function() {
+ newTodo.remove(); // 이 부분은 다음 섹션에서 자세히 배울 예정!
+ };
+
+ // li에 텍스트와 버튼 추가
+ newTodo.appendChild(textSpan);
+ newTodo.appendChild(deleteBtn);
+
+ // 목록에 추가
+ const todoList = document.getElementById('todoList');
+ todoList.appendChild(newTodo);
+
+ // 입력창 비우기
+ input.value = '';
+}
+
+ </script>
+
+</body>
+</html>
