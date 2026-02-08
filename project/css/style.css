@@ -1,229 +1,433 @@
-/* ===============================
-   1️⃣ FONT
-=============================== */
-
-@font-face{
-  font-family:'GreatVibes';
-  src:url('../fonts/GreatVibes-Regular.ttf') format('truetype');
-}
-
-
-/* ===============================
-   2️⃣ BASE
-=============================== */
-
-body{
+/* ================= RESET ================= */
+*{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  transition:.3s;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* 🔥 고정형 레이아웃 */
+body{
+  font-family:'Poppins', sans-serif;
+  background:#000;
+  color:#fff;
+
+  min-width:1400px;
+  overflow-x:auto;
 }
 
 
-/* ===============================
-   3️⃣ LAYOUT
-=============================== */
+/* ================= HEADER ================= */
+.top-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:80px;
 
-.overlay{
-  position:absolute;
-  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-  background:linear-gradient(
-    135deg,
-    rgba(255,230,230,0.65),
-    rgba(230,240,255,0.65)
-  );
+  padding:0 60px;
+  z-index:50;
+}
 
-  backdrop-filter:blur(4px);
-  transition:.3s;
-  z-index:1;
+.logo{
+  letter-spacing:6px;
+}
+
+.auth{
+  display:flex;
+  gap:30px;
+}
+
+.auth a{
+  color:#fff;
+  text-decoration:none;
+  opacity:0.8;
+  transition:0.3s;
+}
+
+.auth a:hover{
+  opacity:1;
 }
 
 
-/* ===============================
-   4️⃣ HERO
-=============================== */
-
+/* ================= HERO ================= */
 .hero{
+  width:100%;
   height:100vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+  url("https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
   position:relative;
-  background:url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085")
-             center/cover no-repeat;
 }
 
-.hero-content{
-  position:absolute;
-  inset:0;
+.hero-inner{
+  width:1200px;
+  margin:auto;
 
+  height:100%;
+  display:flex;
+  align-items:center;
+  gap:80px;
+}
+
+.big-number{
+  font-size:220px;
+  font-weight:800;
+  white-space:nowrap;
+
+  background:linear-gradient(180deg,#c7f0ff,#7ad7ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.right h2{
+  font-size:90px;
+
+  background:linear-gradient(90deg,#9be7ff,#ffa8ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.right h3{
+  font-size:70px;
+}
+
+
+/* ================= MY PAGE ================= */
+.mypage-layout{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  backdrop-filter:blur(16px);
+  background:rgba(0,0,0,0.65);
+
+  display:flex;
+
+  opacity:0;
+  pointer-events:none;
+  transition:0.4s;
+
+  z-index:1000;
+}
+
+.mypage-layout.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.mypage-menu{
+  width:260px;
+  padding:40px 30px;
+  background:rgba(255,255,255,0.05);
+}
+
+.mypage-menu ul{
+  list-style:none;
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.mypage-menu li{
+  cursor:pointer;
+  opacity:0.7;
+}
+
+.mypage-menu li.active{
+  opacity:1;
+}
+
+.mypage-content{
+  flex:1;
+  padding:80px;
+  min-width:900px;
+}
+
+.tab{
+  display:none;
+  max-width:520px;
+}
+
+.tab.active{
+  display:block;
+}
+
+.tab input{
+  width:100%;
+  padding:14px;
+  margin-bottom:16px;
+  background:rgba(255,255,255,0.08);
+  border:none;
+  color:#fff;
+}
+
+.tab button{
+  padding:14px 26px;
+  background:linear-gradient(90deg,#7ad7ff,#ffa8ff);
+  border:none;
+  color:#000;
+}
+
+.danger{
+  background:#ff4d6d !important;
+  color:#fff !important;
+}
+
+.close-mypage{
+  position:absolute;
+  top:30px;
+  right:40px;
+  cursor:pointer;
+}
+
+
+/* ==================================================
+   ADMIN PAGE
+================================================== */
+
+.admin-main,
+.admin-section{
+  height:100vh;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  text-align:center;
-}
 
-.hero-content h1{
-  font-family:'GreatVibes', cursive;
-  font-size:96px;
-  font-weight:400;
-  color:#5C4033;
-  letter-spacing:4px;
-}
-
-.hero-content p{
-  margin-top:10px;
-  font-size:20px;
-  letter-spacing:6px;
-  color:#7A5C4F;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 
-/* ===============================
-   5️⃣ NAVBAR
-=============================== */
+/* 배경 */
+.admin-main{
+  background:
+  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+  url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=80");
+}
 
-.navbar-custom{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
+#score{
+  background:
+  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+  url("https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=1920&q=80");
+}
+
+#board{
+  background:
+  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+  url("https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=1920&q=80");
+}
+
+#member{
+  background:
+  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+  url("https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=1920&q=80");
+}
+
+
+/* ==================================================
+   ADMIN CARD UPGRADE FINAL
+================================================== */
+
+.admin-grid{
+  display:flex;
+  gap:50px;
+  margin-top:60px;
+}
+
+
+/* ==================================================
+   ADMIN CARD - NEON PANEL STYLE
+================================================== */
+
+.admin-grid{
+  display:flex;
+  gap:60px;
+  margin-top:60px;
+}
+
+
+/* 카드 기본 */
+.admin-card{
+  position:relative;
+
+  width:260px;
+  height:180px;
 
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:center;
 
-  padding:20px 40px;
-  z-index:20;
+  font-size:19px;
+  font-weight:600;
+  letter-spacing:1px;
+
+  color:#fff;
+
+  /* 내부 패널 */
+  background:rgba(15,20,30,0.75);
+  backdrop-filter:blur(10px);
+
+  border-radius:20px;
+
+  /* 외곽 프레임 */
+  border:1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05) inset,
+    0 15px 40px rgba(0,0,0,0.6);
+
+  cursor:pointer;
+
+  transition:all 0.35s ease;
 }
 
-.logo{
-  font-family:'GreatVibes', cursive;
-  font-size:28px;
-  color:#5C4033;
+
+/* Hover */
+.admin-card:hover{
+
+  transform:translateY(-14px) scale(1.04);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.8),
+    0 0 25px rgba(120,200,255,0.25);
+
 }
 
-.nav-center{
+
+/* ================= 네온 프레임 ================= */
+
+/* 기본 라이트 */
+.admin-card::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  border-radius:20px;
+
+  padding:1px;
+
+  background:linear-gradient(
+    130deg,
+    rgba(255,255,255,0.0),
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.0)
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+
+  opacity:0.4;
+}
+
+
+
+
+
+
+
+/* ==================================================
+   ADMIN NAV
+================================================== */
+
+.admin-nav{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translate(-50%, -20px);
+
+  padding:14px 40px;
+
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(14px);
+
+  border-radius:40px;
+  box-shadow:0 0 20px rgba(0,0,0,0.4);
+
+  z-index:1000;
+
+  opacity:0;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+
+.admin-nav.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+.admin-menu{
   display:flex;
   gap:40px;
 }
 
-.nav-center a{
+.admin-menu a{
+  color:#fff;
   text-decoration:none;
-  color:#5C4033;
-  font-weight:500;
-  transition:.25s;
+  opacity:0.85;
+  transition:0.3s;
 }
 
-.nav-center a:hover{
-  color:#000;
-}
-
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:18px;
+.admin-menu a:hover{
+  opacity:1;
 }
 
 
-/* ===============================
-   6️⃣ AUTH (LOGIN / SIGNUP)
-=============================== */
+/* ================= HOME BUTTON ================= */
+.admin-home-btn{
+  position:fixed;
+  top:20px;
+  right:40px;
 
-.auth-link{
-  font-family:'GreatVibes', cursive;
-  font-size:24px;
-  font-weight:400;
+  padding:10px 22px;
 
-  background:transparent;
-  padding:0;
-  margin:0;
-  border:none;
-  outline:none;
-  box-shadow:none;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
 
-  text-decoration:none !important;
-  color:#6B4B5C !important;
-
-  cursor:pointer;
-  transition:.25s;
-}
-
-.auth-link:hover{
-  color:#000 !important;
-}
-
-
-/* ===============================
-   7️⃣ SWITCH
-=============================== */
-
-.switch{
-  position:relative;
-  display:inline-block;
-  width:52px;
-  height:26px;
-  cursor:pointer;
-}
-
-.switch input{
-  opacity:0;
-  width:0;
-  height:0;
-}
-
-.slider{
-  position:absolute;
-  inset:0;
-  background:#ddd;
   border-radius:30px;
-  transition:.3s;
+
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+
+  box-shadow:0 0 12px rgba(0,0,0,0.4);
+  transition:0.3s;
+
+  z-index:1000;
 }
 
-.slider::before{
-  content:"";
-  position:absolute;
-  width:20px;
-  height:20px;
-  left:3px;
-  top:3px;
-  background:white;
-  border-radius:50%;
-  transition:.3s;
-}
-
-input:checked + .slider{
-  background:#CDB4FF;
-}
-
-input:checked + .slider::before{
-  transform:translateX(26px);
+.admin-home-btn:hover{
+  background:rgba(255,255,255,0.15);
 }
 
 
-/* ===============================
-   8️⃣ DARK MODE
-=============================== */
-
-body.dark .overlay{
-  background:rgba(20,22,30,0.65);
+/* ================= 스크롤 스냅 ================= */
+html{
+  scroll-behavior:smooth;
+  scroll-snap-type:y mandatory;
 }
 
-body.dark .hero-content h1,
-body.dark .hero-content p{
-  color:#F1F5F9;
-}
-
-body.dark .auth-link{
-  color:#E6EAF2 !important;
-}
-
-body.dark .nav-center a{
-  color:#E6EAF2;
-}
-
-body.dark .nav-center a:hover{
-  color:#FFFFFF;
-}
-
-body.dark .logo{
-  color:#FFFFFF;
+.admin-main,
+.admin-section{
+  scroll-snap-align:start;
 }
